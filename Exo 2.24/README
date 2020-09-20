@@ -17,11 +17,3 @@ chmod +x OS2.py
 strace ./OS2 &>strace_output_python
 -----------------------------------
 
-Remarques
--Fonn expliquer systems calls yo 
-https://github.com/mattlevan/copy.c/blob/master/README.md
-
--Par curiosite mal comparer ak Python,li gen plus systemes calls,fonn ta jwenn poukisa
-
--Code c an c ca ki sou github lan, m essayer refel yo still sanble
-
