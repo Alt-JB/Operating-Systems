@@ -92,7 +92,7 @@ class GetMax extends Thread
             if (Exo_4.input.length%2 == 1)
             Exo_4.median = Exo_4.input[mitan];
             else 
-            Exo_4.median = (Exo_4.input[mitan] + Exo_4.input[mitan])/2; 
+            Exo_4.median = (Exo_4.input[mitan] + Exo_4.input[mitan + 1])/2; 
 
         } 
     }
