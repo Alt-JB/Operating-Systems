@@ -1,10 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package exo_4;
+
+/**
+ *
+ * @author Administrateur
+ */
 import java.util.Arrays;
 import java.lang.Thread;
+import java.util.Scanner;
 
 public class Exo_4
 {
+       public static int [] readNumsFromCommandLine() {
+        System.out.println("Enter n : ");
+      Scanner input = new Scanner(System.in);
+       
+       int[] array = new int[input.nextInt()];
+       for(int i = 0; i < array.length; i++){
+           System.out.println("Enter le number  #"+(i+1)+" : ");
+            array[i] = input.nextInt();
+       }
+        return array;
+    }
+
     //declare the variables globally
-    public static int input[]= {12,123,1324,13242,92,24,24,56,73,2} ;//temporary
+  //  public static int input[]= {12,123,1324,13242,92,24,24,56,73,2} ;//temporary
+       public static int input[]= readNumsFromCommandLine();
     public static int max =0 ,min = 0;
     public static double  average = 0 , median = 0 ,StandardDeviation = 0;
     
@@ -92,7 +117,7 @@ class GetMax extends Thread
             if (Exo_4.input.length%2 == 1)
             Exo_4.median = Exo_4.input[mitan];
             else 
-            Exo_4.median = (Exo_4.input[mitan] + Exo_4.input[mitan])/2; 
+            Exo_4.median = (Exo_4.input[mitan] + Exo_4.input[mitan+1])/2; 
 
         } 
     }
