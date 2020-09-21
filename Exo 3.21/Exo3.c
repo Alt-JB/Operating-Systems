@@ -54,7 +54,7 @@ int main ()
     pid_t pid ; //to identify the child process
 
     printf("                Collatz conjecture algorithm\n");
-    printf("Enter a positive interger : ");
+    printf("Enter a positive integer : ");
     scanf("%d",&input); //apply fonction to validate user's input
 
     pid = fork();  //creates the child process
@@ -64,13 +64,20 @@ int main ()
              perror("Error creating child");
              return -1;
          }
-         else if (pid > 0) //Child created succesfully
+         else if (pid == 0) //Child created succesfully
          {
              printf("Child was succefully created with ID : %d \n",getpid());
-            Collatz_conjecture(input);
-             wait(NULL); // makes the parent process wait until the child process is done .
-            printf("\nChild has finished\n");
+             printf("%d,",input);
+             Collatz_conjecture(input);             
+             printf("\nChild has finished");
+            
          }
+         else
+         {
+             wait(NULL); // makes the parent process wait until the child process is done .
+            printf("\nParent is executing with ID: %d\n",getpid());
+         }
+         
     return 0;
 
 }
