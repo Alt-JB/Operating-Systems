@@ -21,5 +21,3 @@ Nou declarer 2 semaphores: sem_dec,sem_inc;
 Fok nou fon jan pou leu nan section critique increase lan pou decrease lan nan section critique li:exclusion mutuelle
 donc nan fonction increase lan,exactement avant section critique li,m mete "sem_wait(&sem_dec);" ki fait li tann si decrease lan nan section critique pal. et vice versa
 then leu ou soti de section an ,ou release semaphore lan ie ou di ou pa na section critique anko.sem_post(&sem_dec)
-
-Pour plus infos ,check example producteur consomateur :https://stackoverflow.com/questions/15182328/semaphore-implementation
