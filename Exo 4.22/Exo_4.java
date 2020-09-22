@@ -21,7 +21,7 @@ public class Exo_4
        
        int[] array = new int[input.nextInt()];
        for(int i = 0; i < array.length; i++){
-           System.out.println("Enter le number  #"+(i+1)+" : ");
+           System.out.println("Enter number  #"+(i+1)+" : ");
             array[i] = input.nextInt();
        }
         return array;
