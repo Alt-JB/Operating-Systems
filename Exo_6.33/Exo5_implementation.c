@@ -1,56 +1,93 @@
+#include <stdio.h>
 #include <semaphore.h> //ADDED TO USE SEMAPHORES
-
-
+#include <stdlib.h> //ADDED TO USE RAND()
+#include <pthread.h> //ADDED TO USE THREADS
+#include <unistd.h>
 #define MAX_RESOURCES 5
-int available_resources = MAX_RESOURCES;
+const int stock_max_limit= MAX_RESOURCES;
+int available_resources = 0;
 
 sem_t sem_dec,sem_inc; //declaring a semaphore for the increase function and one for the decrease.
 
-/* decrease available resources by count resources */
-/* return 0 if sufficient resources available, */
-/* otherwise return -1 */
 
 int decrease_count(int count) 
 {
-    sem_wait(&sem_inc); //We need to lock access to the available_resources varibale so it 
-                      // does not get modified while we're using it
     
-    //critical section
-    printf("Entering critical section");
     if (available_resources < count)
         return -1;
     else {
         available_resources -= count;
          }
-    printf("Exiting critical section");
-
-    sem_post(&sem_dec); //releasing 
+   
     return 0;
 }
 
 /* increase available resources by count */
 int increase_count(int count)
 {
-    sem_wait(&sem_dec);
-    //critical section
-    printf("Entering critical section");
-
     available_resources += count;
-
-    printf("Exiting critical section");
-    sem_post(&sem_inc); //Release
     return 0;
+    
+}
+void *consumer(void *arg) 
+{
+    int i, x;
+    for (i = 0; i < 10; i++) {
+        x = rand()%4;
+        while(0 == available_resources+x)
+        {
+            printf("Not enough ressources, consumer on wait..\n");
+            sem_wait(&sem_inc);
+            printf("consumer operation continues..\n");
+        }
+
+       sleep(1);   //consumer rate
+        decrease_count(x);
+        //available_resources--;
+        printf("Consumer:Stock %d\n", available_resources);
+        sem_post(&sem_dec);
+        printf("Consumer:post signal.Exited critical section\n");
+        }
+
+    
+}
+
+void *producer(void *arg) 
+{
+     int i, x;
+    for (i = 0; i < 10; i++) {
+        x = rand()%3;
+        while(stock_max_limit == x+available_resources){
+            printf("stock overflow, production on wait..\n");
+            sem_wait(&sem_dec);
+            printf("production operation continues..\n");
+        }
+
+        sleep(1);   //production rate
+        increase_count(x);
+         //available_resources++;
+        printf("Producer: Stock: %d\n",available_resources);
+        sem_post(&sem_inc);
+        printf("Producer::post signal.Exited critical section\n");
+    }
+
     
 }
 
 int main ()
 {
+    pthread_t t1,t2;
+
     //initialising the semaphores
     sem_init(&sem_dec, 0, 0);
     sem_init(&sem_inc, 0, 0);
 
     //Do the work
-
+    pthread_create(&t1, NULL, consumer, NULL);
+    pthread_create(&t2, NULL, producer, NULL);
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+    
     //Destroying the Semaphores
     sem_destroy(&sem_dec);
     sem_destroy(&sem_inc);
