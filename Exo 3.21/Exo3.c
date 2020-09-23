@@ -57,9 +57,16 @@ int main ()
     do
     {
         printf("Enter a positive integer : ");
-        scanf("%d",&input); //apply fonction to validate user's input
+        //scanf("%d",&input); //apply fonction to validate user's input
+        if (scanf("%d", &input) != 1)
+        {
+            printf("This is not a number.\n");
+            return 0;
+            //input=0;
+            //goto bar;
+        }
     }
-    while (input<=0);
+    while (input<=0);// || scanf("%d", &input) != 1);
 
     pid = fork();  //creates the child process
 
