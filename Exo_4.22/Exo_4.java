@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Exo_4
 {
        public static int [] readNumsFromCommandLine() {
-        System.out.println("Enter n : ");
+        System.out.println("Enter the length of the array : ");
       Scanner input = new Scanner(System.in);
        
        int[] array = new int[input.nextInt()];
@@ -24,7 +24,8 @@ public class Exo_4
            System.out.println("Enter number  #"+(i+1)+" : ");
             array[i] = input.nextInt();
        }
-        return array;
+       input.close(); 
+       return array;
     }
 
     //declare the variables globally
@@ -69,7 +70,7 @@ public class Exo_4
             System.out.println("The minimum value is "+ min);
             System.out.println("The average  value is "+ average);
             System.out.println("The median value is "+ median);
-			System.out.println("The Standard Deviation  is "+ StandardDeviation);
+			System.out.println("The Standard Deviation is " +StandardDeviation);
 		} 
 }
 
@@ -133,7 +134,7 @@ class GetMax extends Thread
             {
                 sd = sd +Math.pow(Exo_4.input[i]- Exo_4.average, 2);
             }
-            Exo_4.StandardDeviation = sd/Exo_4.input.length;
+            Exo_4.StandardDeviation = Math.sqrt(sd/Exo_4.input.length-1);
         }
 
     }

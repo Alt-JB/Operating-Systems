@@ -54,19 +54,27 @@ int main ()
     pid_t pid ; //to identify the child process
 
     printf("                Collatz conjecture algorithm\n");
-    do
+    int num; 
+    char term; 
+    if(scanf("%d%c", &input, &term) != 2 || term != '\n') 
     {
-        printf("Enter a positive integer : ");
-        //scanf("%d",&input); //apply fonction to validate user's input
-        if (scanf("%d", &input) != 1)
+        printf("Input is not an number.\n"); 
+        return 0 ;
+    }
+    else 
+    {
+         
+        if (input> 0)
         {
-            printf("This is not a number.\n");
+            printf("Valid input.\n");
+        }
+        else 
+        {
+            printf("Negatif integer.\n");
             return 0;
-            //input=0;
-            //goto bar;
         }
     }
-    while (input<=0);// || scanf("%d", &input) != 1);
+    
 
     pid = fork();  //creates the child process
 
