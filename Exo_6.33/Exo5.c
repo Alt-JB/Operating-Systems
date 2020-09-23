@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <semaphore.h> //ADDED TO USE SEMAPHORES
 
 
@@ -12,7 +13,7 @@ sem_t sem_dec,sem_inc; //declaring a semaphore for the increase function and one
 
 int decrease_count(int count) 
 {
-    sem_wait(&sem_inc); //We need to lock access to the available_resources varibale so it 
+    sem_wait(&sem_inc); //We need to lock access to the available_resources variabale so it 
                       // does not get modified while we're using it
     
     //critical section

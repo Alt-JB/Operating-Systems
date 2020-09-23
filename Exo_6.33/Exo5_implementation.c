@@ -43,7 +43,6 @@ void *consumer(void *arg)
 
        sleep(1);   //consumer rate
         decrease_count(x);
-        //available_resources--;
         printf("Consumer:Stock %d\n", available_resources);
         sem_post(&sem_dec);
         printf("Consumer:post signal.Exited critical section\n");
@@ -65,7 +64,6 @@ void *producer(void *arg)
 
         sleep(1);   //production rate
         increase_count(x);
-         //available_resources++;
         printf("Producer: Stock: %d\n",available_resources);
         sem_post(&sem_inc);
         printf("Producer::post signal.Exited critical section\n");
