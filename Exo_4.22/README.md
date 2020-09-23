@@ -1,5 +1,3 @@
-JE TIENS A  PRECISER QUE PROGRAMME SA A PA MACHE POU MW. SO AVNT DE MODIFIER, JAIMERAIS SAVOIR SI JE SUIS LA SEULE A AVOIR UN PROBLEME.
-
 Ce programme a pour principal objectif de mettre en avant l'utilisation des 'threads'. Nous disposons, en effet, de cinq threads responsables respectivement de:
 - Trouver le maximum (Max)
 - Trouver le minimum (Min)
