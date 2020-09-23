@@ -1,4 +1,11 @@
-JE TIENS A  PRECISER QUE PROGRAMME SA A PA MACHE POU MW. SO AVNT DE MODIFIER, JAIMERAIS SAVOIR SI JE SUIS LA SEULE A AVOIR UN PROBLEME.
+EXERCICE 4.22
+------------------------------------------------------------------------------
+Program  : The Collatz conjecture
+FileName : Exo_4.java
+Input    : An array of positive numbers
+Output 	 : Maximum, Minimum, Average, Mediane, Standard Deviation
+By       : ALTIDOR Jean Bernard T., DUBUCHE Kevin J., THEODORE Barbara G.  
+-----------------------------------------------------------------------------
 
 Ce programme a pour principal objectif de mettre en avant l'utilisation des 'threads'. Nous disposons, en effet, de cinq threads responsables respectivement de:
 - Trouver le maximum (Max)

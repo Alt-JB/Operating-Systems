@@ -7,7 +7,7 @@ Input 1  : test
 Input 2  : testCopy
 Output 	 : 'The file test is copied in testCopy'
 By       : ALTIDOR Jean Bernard T., DUBUCHE Kevin J., THEODORE Barbara G.  
-;-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 
 **C code
 

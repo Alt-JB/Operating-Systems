@@ -1,3 +1,12 @@
+EXERCICE 3.21
+------------------------------------------------------------------------------
+Program  : The Collatz conjecture
+FileName : Exo3.c
+Input    : Any positive number
+Output 	 : The input, .... (all the numbers found) ..., 1.
+By       : ALTIDOR Jean Bernard T., DUBUCHE Kevin J., THEODORE Barbara G.  
+-----------------------------------------------------------------------------
+
 Dans ce programme écrit en C, l'objectif est de créer un algorithme demandant à un utilisateur de rentrer un entier strictement positif, n.
 Une fois cette valeur entrée, l'algorithme sera le suivant:
 n=n/2,      si n est pair
@@ -7,6 +16,8 @@ Et cet algorithme continuera jusqu'a ce que le système obtienne '1' pour résul
 Comment cela se passe-t-il au coeur du programme?
 
 Pour commencer, il est demandé à l'utilisateur d'entrer un nombre entier positif. Tant que ce nombre ne sera pas positif, l'algorithme en question ne pourra pas être lancé.
+
+Il s'agit d'un programme mondialement connu et jusqu'à présent impossible à prouver.
 
 EXPLICATION PARENT VS CHILD PROCESS
 ======================================
