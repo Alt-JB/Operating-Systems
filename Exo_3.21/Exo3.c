@@ -79,11 +79,14 @@ int main ()
             {
                 check = 1;
                 printf("Valid input.\n");
-                break;
+                
             }
             else
+            {
                 printf("Please enter a positive integer.\n");
                 check = 0;
+            }
+                
         }
 
     }
