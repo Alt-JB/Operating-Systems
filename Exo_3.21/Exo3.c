@@ -2,6 +2,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h> 
+#include <stdio_ext.h>
 
 int even (int n)
 {
@@ -50,31 +51,42 @@ int  Collatz_conjecture (int n)
 
 int main ()
 {
-    int input;//temporary
+    int input,check =0;
+    char term; 
     pid_t pid ; //to identify the child process
 
     printf("                Collatz conjecture algorithm\n");
-    int num; 
-    char term; 
-    if(scanf("%d%c", &input, &term) != 2 || term != '\n') 
+    printf("Enter the number :");
+   
+    while (check != 1)
     {
-        printf("Input is not an number.\n"); 
-        return 0 ;
-    }
-    else 
-    {
-         
-        if (input> 0)
+        check = 0;
+       
+        __fpurge(stdin);
+       
+        
+        if( scanf("%d%c", &input, &term) != 2 || term != '\n')
         {
-            printf("Valid input.\n");
+            check = 0;
+            printf("Please enter an integer.\n");
+            
+
         }
-        else 
+        else
         {
-            printf("Negatif integer.\n");
-            return 0;
+
+            if (input > 0)
+            {
+                check = 1;
+                printf("Valid input.\n");
+                break;
+            }
+            else
+                printf("Please enter a positive integer.\n");
+                check = 0;
         }
+
     }
-    
 
     pid = fork();  //creates the child process
 
