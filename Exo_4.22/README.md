@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Exo 4.22/README.md
 EXERCICE 4.22
 ------------------------------------------------------------------------------
 Program  : The Collatz conjecture
@@ -7,6 +8,8 @@ Output 	 : Maximum, Minimum, Average, Mediane, Standard Deviation
 By       : ALTIDOR Jean Bernard T., DUBUCHE Kevin J., THEODORE Barbara G.  
 -----------------------------------------------------------------------------
 
+=======
+>>>>>>> master:Exo_4.22/README.md
 Ce programme a pour principal objectif de mettre en avant l'utilisation des 'threads'. Nous disposons, en effet, de cinq threads responsables respectivement de:
 - Trouver le maximum (Max)
 - Trouver le minimum (Min)
