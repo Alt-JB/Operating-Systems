@@ -15,17 +15,35 @@ import java.util.Scanner;
 
 public class Exo_4
 {
+    public static Scanner scanner = new Scanner(System.in);
+    
+    public static int nextInt(){
+    int i=0;
+    boolean done=false;
+    
+    System.out.println("Please enter a number:");
+    while (!scanner.hasNextInt()){//ou i== 0
+        System.out.println("Please enter a number:");
+        scanner.nextLine();
+      
+    }
+      i = scanner.nextInt();
+    
+    return i;
+}
        public static int [] readNumsFromCommandLine() {
-        System.out.println("Enter the length of the array : ");
-      Scanner input = new Scanner(System.in);
+        System.out.println("Enter n : ");
+      int input = nextInt();
+      
+
        
-       int[] array = new int[input.nextInt()];
+       int[] array = new int[input];
        for(int i = 0; i < array.length; i++){
-           System.out.println("Enter number  #"+(i+1)+" : ");
-            array[i] = input.nextInt();
+           System.out.println("Enter le nombre  #"+(i+1)+" : ");
+           array[i]=nextInt();
        }
-       input.close(); 
-       return array;
+       scanner.close();
+        return array;
     }
 
     //declare the variables globally
@@ -70,7 +88,7 @@ public class Exo_4
             System.out.println("The minimum value is "+ min);
             System.out.println("The average  value is "+ average);
             System.out.println("The median value is "+ median);
-			System.out.println("The Standard Deviation is " +StandardDeviation);
+			System.out.println("The Standard Deviation  is "+ StandardDeviation);
 		} 
 }
 
@@ -118,8 +136,7 @@ class GetMax extends Thread
             if (Exo_4.input.length%2 == 1)
             Exo_4.median = Exo_4.input[mitan];
             else 
-
-            Exo_4.median = (Exo_4.input[mitan] + Exo_4.input[mitan + 1])/2; 
+            Exo_4.median = (Exo_4.input[mitan] + Exo_4.input[mitan+1])/2; 
 
         } 
     }
@@ -134,7 +151,7 @@ class GetMax extends Thread
             {
                 sd = sd +Math.pow(Exo_4.input[i]- Exo_4.average, 2);
             }
-            Exo_4.StandardDeviation = Math.sqrt(sd/Exo_4.input.length-1);
+            Exo_4.StandardDeviation = sd/Exo_4.input.length;
         }
 
     }

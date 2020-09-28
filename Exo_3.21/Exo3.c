@@ -4,6 +4,17 @@
 #include <unistd.h> 
 #include <stdio_ext.h>
 
+// SA PAP MACHE ?
+// int even (int n){
+//     n= n / 2;  
+//     printf("%d,",n);
+//     return n;
+// }
+// int odd (int n ){
+//     n = 3*n + 1;   
+//     printf("%d,",n);
+//     return n;
+// }
 int even (int n)
 {
     n= n / 2;
