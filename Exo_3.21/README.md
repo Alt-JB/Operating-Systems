@@ -21,7 +21,6 @@ Il s'agit d'un programme mondialement connu et jusqu'à présent impossible à p
 
 EXPLICATION PARENT VS CHILD PROCESS
 ======================================
-VERIFIER 3 RETURN VALUE NAN PARAGRAF SA AVAN NOU VOYEL, GEN YON TYPO
 Après avoir vérifié la création du processus 'enfant', l'algorithme peut alors être mis en marche. Afin d'assurer cette vérification, il suffit de prendre en compte l'identifiant du processus. Si ce dernier est négatif, le processus n'a pas été créé. Néanmoins, si l'identifiant est nul, cela sous-entend que le processus 'parent' est en pleine exécution, alors une interruption d'attente est imposée au processus 'enfant'.
 
 EXPLICATION DE fork()
