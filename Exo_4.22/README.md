@@ -1,7 +1,7 @@
 <<<<<<< HEAD:Exo 4.22/README.md
 EXERCICE 4.22
 ------------------------------------------------------------------------------
-Program  : The Collatz conjecture
+Program  : multithreaded program
 FileName : Exo_4.java
 Input    : An array of positive numbers
 Output 	 : Maximum, Minimum, Average, Mediane, Standard Deviation
